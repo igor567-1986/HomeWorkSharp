@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System.Security.Cryptography.X509Certificates;
+using static System.Console;
 
 //TASK1
 /*do
@@ -39,3 +40,41 @@ number += thousands * 1000 + hundreds * 100 + dozens * 10;
 Console.WriteLine(number);*/
 
 //Task 4
+int chislo,num1,num2,num3,num4,num5,num6;
+do
+{
+	Console.Write("Введите шестизначное число:");
+	chislo = int.Parse(Console.ReadLine());
+	if (chislo >= 1000000 || chislo < 100000) Console.WriteLine("Error:не коректное значение введите шестизначное число "); 
+} while (chislo >= 1000000 || chislo < 100000);
+num1 = chislo / 100000;
+chislo = chislo % 100000;
+num2 = chislo / 10000;
+chislo = chislo % 10000;
+num3 = chislo / 1000;
+chislo = chislo % 1000;
+num4 = chislo / 100;
+chislo = chislo %100;
+num5 = chislo / 10;
+num6 = chislo %10;
+int[] numbers =  { num1, num2 ,num3,num4,num5,num6};
+int x, y;
+do
+{
+	Console.Write("Введите индекс числа который хотите поменять:");
+    x = int.Parse(Console.ReadLine());
+	if (x < 0 || x > 7) Console.WriteLine("Error:не коректное значение введите от0 до6");
+} while (x<0||x>7);
+do
+{
+	Console.Write("Введите индекс числа  на который хотите поменять:");
+	y = int.Parse(Console.ReadLine());
+	if (y < 0 || y > 7) Console.WriteLine("Error:не коректное значение введите от0 до6"); 
+} while (y < 0 || y > 7);
+int buffer = numbers[x-1];
+numbers[x-1] = numbers[y-1];
+numbers[y - 1] = buffer;
+for (int i = 0; i < numbers.Length; i++)
+{
+        Console.Write(numbers[i]);
+}
