@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using static System.Console;
+﻿using static System.Console;
 
 //TASK1
 /*do
@@ -40,7 +39,7 @@ number += thousands * 1000 + hundreds * 100 + dozens * 10;
 Console.WriteLine(number);*/
 
 //Task 4
-int chislo,num1,num2,num3,num4,num5,num6;
+/*int chislo,num1,num2,num3,num4,num5,num6;
 do
 {
 	Console.Write("Введите шестизначное число:");
@@ -77,4 +76,8 @@ numbers[y - 1] = buffer;
 for (int i = 0; i < numbers.Length; i++)
 {
         Console.Write(numbers[i]);
-}
+}*/
+
+//Task 5
+Console.Write("Введите дату день недели и сезон которой хотите узнать:");
+
